@@ -26,9 +26,9 @@ namespace SaaS__05.Models
         public string Password { get; set; }
 
         [StringLength(50)]
-        public string Num__Telephone { get; set; }
+        public string Num_Telephone { get; set; }
 
-        public int? Delais__Grace { get; set; }
+        public int? Delais_Grace { get; set; }
 
         public bool? isAdmin { get; set; }
 

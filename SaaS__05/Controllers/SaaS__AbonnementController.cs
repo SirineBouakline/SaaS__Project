@@ -11,7 +11,7 @@ namespace SaaS__05.Controllers
 {
     public class SaaS__AbonnementController : Controller
     {
-        DbModel db = new DbModel();
+        
 
         // GET: SaaS__Abonnement/Index
         public ActionResult Index()

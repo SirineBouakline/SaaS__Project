@@ -21,9 +21,9 @@ namespace SaaS__05.Models
         [StringLength(50)]
         public string Destinataire { get; set; }
 
-        public DateTime? Date__Envoi { get; set; }
+        public DateTime? Date_Envoi { get; set; }
 
-        public TimeSpan? Heure__Envoi { get; set; }
+        public TimeSpan? Heure_Envoi { get; set; }
 
         public virtual SaaS__Message__Modele SaaS__Message__Modele { get; set; }
     }

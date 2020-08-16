@@ -19,17 +19,17 @@ namespace SaaS__05.Models
 
         public Guid? ID____SaaS__Abonnement { get; set; }
 
-        public decimal? Tarif__Forfaitaire__Mensuel { get; set; }
+        public decimal? Tarif_Forfaitaire_Mensuel { get; set; }
 
-        public decimal? Tarif__Forfaitaire__Annuel { get; set; }
+        public decimal? Tarif_Forfaitaire_Annuel { get; set; }
 
-        public decimal? Tarif__Par__Utilisateur__Annuel { get; set; }
+        public decimal? Tarif_Par_Utilisateur_Annuel { get; set; }
 
-        public decimal? Tarif__Par__Utilisateur__Mensuel { get; set; }
+        public decimal? Tarif_Par_Utilisateur_Mensuel { get; set; }
 
-        public DateTime? Date__Debut { get; set; }
+        public DateTime? Date_Debut { get; set; }
 
-        public DateTime? Date__Fin { get; set; }
+        public DateTime? Date_Fin { get; set; }
 
         [StringLength(50)]
         public string Description { get; set; }

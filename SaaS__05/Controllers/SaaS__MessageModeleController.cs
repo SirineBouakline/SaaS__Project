@@ -7,49 +7,50 @@ using System.Web.Mvc;
 
 namespace SaaS__05.Controllers
 {
-    public class SaaS__EntrepriseController : Controller
+    public class SaaS__MessageModeleController : Controller
     {
-        // GET: SaaS__Entreprise
+        DbModel db = new DbModel();
+        // GET: SaaS__MessageModele
         public ActionResult Index()
         {
             DbModel DbModel = new DbModel();
-            return View(DbModel.SaaS__Entreprise.ToList());
+            return View(DbModel.SaaS__Message__Modele.ToList());
         }
 
-        // GET: SaaS__Entreprise/Details/5
+        // GET: SaaS__MessageModele/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: SaaS__Entreprise/Create
+        // GET: SaaS__MessageModele/Create
         public ActionResult Create()
         {
+            List<SaaS__Message__Type> listeabo = db.SaaS__Message__Type.ToList();
+            Console.WriteLine(listeabo);
+            ViewData["Abos"] = listeabo;
             return View();
         }
 
-        // POST: SaaS__Entreprise/Create
+        // POST: SaaS__MessageModele/Create
         [HttpPost]
-        public ActionResult Create(SaaS__Entreprise entreprise)
+        public ActionResult Create(SaaS__Message__Modele fonctionnalite, string abonnement)
         {
-            SaaS__Entreprise ent = new SaaS__Entreprise
+            List<SaaS__Message__Type> listeabo = db.SaaS__Message__Type.ToList();
+            SaaS__Message__Type abon = listeabo.Find(s => s.Title.Equals(abonnement));
+            SaaS__Message__Modele fo = new SaaS__Message__Modele
             {
                 ID_ = Guid.NewGuid(),
-                Addresse = entreprise.Addresse,
-                Title = entreprise.Title,
-                Email= entreprise.Email,
-                Code_TVA= entreprise.Code_TVA,
-                Num_Telephone= entreprise.Num_Telephone,
-                RNE=entreprise.RNE,
-                
+                Description = fonctionnalite.Description,
+                Title = fonctionnalite.Title,
+                ID____SaaS__Message__Type = abon.ID_
             };
             using (DbModel DbModel = new DbModel())
             {
                 try
                 {
-                    DbModel.SaaS__Entreprise.Add(ent);
+                    DbModel.SaaS__Message__Modele.Add(fo);
                     DbModel.SaveChanges();
-
                 }
                 catch (Exception e)
                 {
@@ -58,14 +59,16 @@ namespace SaaS__05.Controllers
 
                 return RedirectToAction("Index");
             }
+
         }
-        // GET: SaaS__Entreprise/Edit/5
+
+        // GET: SaaS__MessageModele/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: SaaS__Entreprise/Edit/5
+        // POST: SaaS__MessageModele/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -81,13 +84,13 @@ namespace SaaS__05.Controllers
             }
         }
 
-        // GET: SaaS__Entreprise/Delete/5
+        // GET: SaaS__MessageModele/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: SaaS__Entreprise/Delete/5
+        // POST: SaaS__MessageModele/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

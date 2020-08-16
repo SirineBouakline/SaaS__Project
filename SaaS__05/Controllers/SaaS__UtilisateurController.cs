@@ -44,9 +44,9 @@ namespace SaaS__05.Controllers
                 Nom = utilisateur.Nom,
                 Prenom = utilisateur.Prenom,
                 Email = utilisateur.Email,
-                Num__Telephone = utilisateur.Num__Telephone,
+                Num_Telephone = utilisateur.Num_Telephone,
                 Password = utilisateur.Password,
-                Delais__Grace = utilisateur.Delais__Grace,
+                Delais_Grace = utilisateur.Delais_Grace,
                 isAdmin = utilisateur.isAdmin,
                 isSuperAdmin = utilisateur.isSuperAdmin,
                 ID____SaaS__Entreprise= abon.ID_

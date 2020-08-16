@@ -148,6 +148,8 @@
     <Compile Include="Controllers\SaaS__FonctionnaliteController.cs" />
     <Compile Include="Controllers\SaaS__LoginController.cs" />
     <Compile Include="Controllers\SaaS__MessageController.cs" />
+    <Compile Include="Controllers\SaaS__MessageModeleController.cs" />
+    <Compile Include="Controllers\SaaS__MessageTypeController.cs" />
     <Compile Include="Controllers\SaaS__Message__ModeleController.cs" />
     <Compile Include="Controllers\SaaS__TarifController.cs" />
     <Compile Include="Controllers\SaaS__UtilisateurController.cs" />
@@ -232,10 +234,15 @@
     <Content Include="Views\SaaS__Fonctionnalite\Delete.cshtml" />
     <Content Include="Views\SaaS__Fonctionnalite\Edit.cshtml" />
     <Content Include="Views\SaaS__Utilisateur\Index.cshtml" />
-    <Content Include="Views\SaaS__Tarif\Index.cshtml" />
     <Content Include="Views\SaaS__Entreprise\Index.cshtml" />
     <Content Include="Views\SaaS__Entreprise\Create.cshtml" />
     <Content Include="Views\SaaS__Tarif\Create.cshtml" />
+    <Content Include="Views\SaaS__Tarif\Index.cshtml" />
+    <Content Include="Views\SaaS__Utilisateur\Create.cshtml" />
+    <Content Include="Views\SaaS__MessageType\Index.cshtml" />
+    <Content Include="Views\SaaS__MessageType\Create.cshtml" />
+    <Content Include="Views\SaaS__MessageModele\Index.cshtml" />
+    <Content Include="Views\SaaS__MessageModele\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

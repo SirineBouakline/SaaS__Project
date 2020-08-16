@@ -7,47 +7,42 @@ using System.Web.Mvc;
 
 namespace SaaS__05.Controllers
 {
-    public class SaaS__EntrepriseController : Controller
+    public class SaaS__MessageTypeController : Controller
     {
-        // GET: SaaS__Entreprise
+        DbModel db = new DbModel();
+        // GET: SaaS__MessageType
         public ActionResult Index()
         {
             DbModel DbModel = new DbModel();
-            return View(DbModel.SaaS__Entreprise.ToList());
+            return View(DbModel.SaaS__Message__Type.ToList());
         }
 
-        // GET: SaaS__Entreprise/Details/5
+        // GET: SaaS__MessageType/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: SaaS__Entreprise/Create
+        // GET: SaaS__MessageType/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: SaaS__Entreprise/Create
+        // POST: SaaS__MessageType/Create
         [HttpPost]
-        public ActionResult Create(SaaS__Entreprise entreprise)
+        public ActionResult Create(SaaS__Message__Type Messagetype)
         {
-            SaaS__Entreprise ent = new SaaS__Entreprise
+            SaaS__Message__Type Mt = new SaaS__Message__Type
             {
                 ID_ = Guid.NewGuid(),
-                Addresse = entreprise.Addresse,
-                Title = entreprise.Title,
-                Email= entreprise.Email,
-                Code_TVA= entreprise.Code_TVA,
-                Num_Telephone= entreprise.Num_Telephone,
-                RNE=entreprise.RNE,
-                
+                Title = Messagetype.Title
             };
             using (DbModel DbModel = new DbModel())
             {
                 try
                 {
-                    DbModel.SaaS__Entreprise.Add(ent);
+                    DbModel.SaaS__Message__Type.Add(Mt);
                     DbModel.SaveChanges();
 
                 }
@@ -59,13 +54,14 @@ namespace SaaS__05.Controllers
                 return RedirectToAction("Index");
             }
         }
-        // GET: SaaS__Entreprise/Edit/5
+
+        // GET: SaaS__MessageType/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: SaaS__Entreprise/Edit/5
+        // POST: SaaS__MessageType/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -81,13 +77,13 @@ namespace SaaS__05.Controllers
             }
         }
 
-        // GET: SaaS__Entreprise/Delete/5
+        // GET: SaaS__MessageType/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: SaaS__Entreprise/Delete/5
+        // POST: SaaS__MessageType/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

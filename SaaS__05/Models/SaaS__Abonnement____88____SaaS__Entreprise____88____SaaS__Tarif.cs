@@ -17,9 +17,9 @@ namespace SaaS__05.Models
 
         public Guid? ID____SaaS__Tarif { get; set; }
 
-        public DateTime? Date__Debut { get; set; }
+        public DateTime? Date_Debut { get; set; }
 
-        public DateTime? Date__Fin { get; set; }
+        public DateTime? Date_Fin { get; set; }
 
         public virtual SaaS__Abonnement SaaS__Abonnement { get; set; }
 

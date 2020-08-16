@@ -29,10 +29,10 @@ namespace SaaS__05.Models
         public string Addresse { get; set; }
 
         [StringLength(50)]
-        public string Num__Telephone { get; set; }
+        public string Num_Telephone { get; set; }
 
         [StringLength(50)]
-        public string Code__TVA { get; set; }
+        public string Code_TVA { get; set; }
 
         [StringLength(50)]
         public string RNE { get; set; }

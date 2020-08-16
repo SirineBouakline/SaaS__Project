@@ -66,19 +66,19 @@ namespace SaaS__05.Models
                 .HasForeignKey(e => e.ID____SaaS__Message__Type);
 
             modelBuilder.Entity<SaaS__Tarif>()
-                .Property(e => e.Tarif__Forfaitaire__Mensuel)
+                .Property(e => e.Tarif_Forfaitaire_Mensuel)
                 .HasPrecision(18, 3);
 
             modelBuilder.Entity<SaaS__Tarif>()
-                .Property(e => e.Tarif__Forfaitaire__Annuel)
+                .Property(e => e.Tarif_Forfaitaire_Annuel)
                 .HasPrecision(18, 3);
 
             modelBuilder.Entity<SaaS__Tarif>()
-                .Property(e => e.Tarif__Par__Utilisateur__Annuel)
+                .Property(e => e.Tarif_Par_Utilisateur_Annuel)
                 .HasPrecision(18, 3);
 
             modelBuilder.Entity<SaaS__Tarif>()
-                .Property(e => e.Tarif__Par__Utilisateur__Mensuel)
+                .Property(e => e.Tarif_Par_Utilisateur_Mensuel)
                 .HasPrecision(18, 3);
 
             modelBuilder.Entity<SaaS__Tarif>()
