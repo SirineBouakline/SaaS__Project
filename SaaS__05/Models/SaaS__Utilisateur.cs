@@ -19,7 +19,7 @@ namespace SaaS__05.Models
         [StringLength(50)]
         public string Prenom { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string Email { get; set; }
 
         [StringLength(50)]

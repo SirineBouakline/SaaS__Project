@@ -13,10 +13,9 @@ namespace SaaS__05.Models
 
         public Guid? ID____SaaS__Abonnement { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string Title { get; set; }
 
-        [StringLength(50)]
         public string Description { get; set; }
 
         public virtual SaaS__Abonnement SaaS__Abonnement { get; set; }

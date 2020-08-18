@@ -2,52 +2,56 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using SaaS__05.Models;
 using System.Web.Mvc;
+using SaaS__05.Models;
 
 namespace SaaS__05.Controllers
 {
-    public class SaaS__EntrepriseController : Controller
+    public class SaaS__EntrepriseContactController : Controller
     {
-        // GET: SaaS__Entreprise
+        DbModel db = new DbModel();
+        // GET: SaaS__EntrepriseContact
         public ActionResult Index()
         {
             DbModel DbModel = new DbModel();
-            return View(DbModel.SaaS__Entreprise.ToList());
+            return View(DbModel.SaaS__Entreprise__Contact.ToList());
         }
 
-        // GET: SaaS__Entreprise/Details/5
+        // GET: SaaS__EntrepriseContact/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: SaaS__Entreprise/Create
+        // GET: SaaS__EntrepriseContact/Create
         public ActionResult Create()
         {
+            List<SaaS__Entreprise> listeabo = db.SaaS__Entreprise.ToList();
+            Console.WriteLine(listeabo);
+            ViewData["Abos"] = listeabo;
             return View();
         }
 
-        // POST: SaaS__Entreprise/Create
+        // POST: SaaS__EntrepriseContact/Create
         [HttpPost]
-        public ActionResult Create(SaaS__Entreprise entreprise)
+        public ActionResult Create(SaaS__Entreprise__Contact entreprisecontact, string entreprise)
         {
-            SaaS__Entreprise ent = new SaaS__Entreprise
+            List<SaaS__Entreprise> listeabo = db.SaaS__Entreprise.ToList();
+            SaaS__Entreprise abon = listeabo.Find(s => s.Title.Equals(entreprise));
+            SaaS__Entreprise__Contact ent = new SaaS__Entreprise__Contact
             {
                 ID_ = Guid.NewGuid(),
-                Addresse = entreprise.Addresse,
-                Title = entreprise.Title,
-                Email= entreprise.Email,
-                Code_TVA= entreprise.Code_TVA,
-                Num_Telephone= entreprise.Num_Telephone,
-                RNE=entreprise.RNE                            
-                
+                Nom= entreprisecontact.Nom,
+                Prenom= entreprisecontact.Prenom,
+                Tel1= entreprisecontact.Tel1,
+                Tel2= entreprisecontact.Tel2,
+                ID____SaaS__Entreprise=abon.ID_
             };
             using (DbModel DbModel = new DbModel())
             {
                 try
                 {
-                    DbModel.SaaS__Entreprise.Add(ent);
+                    DbModel.SaaS__Entreprise__Contact.Add(ent);
                     DbModel.SaveChanges();
 
                 }
@@ -59,13 +63,14 @@ namespace SaaS__05.Controllers
                 return RedirectToAction("Index");
             }
         }
-        // GET: SaaS__Entreprise/Edit/5
+
+        // GET: SaaS__EntrepriseContact/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: SaaS__Entreprise/Edit/5
+        // POST: SaaS__EntrepriseContact/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -81,13 +86,13 @@ namespace SaaS__05.Controllers
             }
         }
 
-        // GET: SaaS__Entreprise/Delete/5
+        // GET: SaaS__EntrepriseContact/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: SaaS__Entreprise/Delete/5
+        // POST: SaaS__EntrepriseContact/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -35,8 +35,6 @@ namespace SaaS__05.Controllers
         [HttpPost]
         public ActionResult Create(SaaS__Fonctionnalite fonctionnalite ,string abonnement)
         {
-            
-
             List<SaaS__Abonnement> listeabo = db.SaaS__Abonnement.ToList();
             SaaS__Abonnement abon= listeabo.Find(s=>s.Title.Equals(abonnement));
             SaaS__Fonctionnalite fo = new SaaS__Fonctionnalite

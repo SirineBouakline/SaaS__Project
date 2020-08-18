@@ -21,7 +21,6 @@ namespace SaaS__05.Models
         [StringLength(50)]
         public string Title { get; set; }
 
-        [StringLength(50)]
         public string Description { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

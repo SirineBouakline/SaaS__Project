@@ -31,7 +31,6 @@ namespace SaaS__05.Models
 
         public DateTime? Date_Fin { get; set; }
 
-        [StringLength(50)]
         public string Description { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

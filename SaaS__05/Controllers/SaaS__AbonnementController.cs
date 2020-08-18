@@ -16,13 +16,6 @@ namespace SaaS__05.Controllers
         // GET: SaaS__Abonnement/Index
         public ActionResult Index()
         {
-            //var model = db.SaaS__Abonnement.Select(x => new
-            //{
-            //    ID_ = x.ID,
-            //    Title = x.Title,
-            //    Description=x.Description
-            //};
-            //return View(model);
             DbModel DbModel = new DbModel();
             return View(DbModel.SaaS__Abonnement.ToList());
         }

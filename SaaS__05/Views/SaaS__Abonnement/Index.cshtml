@@ -4,37 +4,40 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutBack.cshtml";
 }
+<h1>List Abonnement</h1>
 
-<h2>Index</h2>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" border="2">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Title)</th>
+                        <th>@Html.DisplayNameFor(model => model.Description)</th>
+                        <th>Actions</th>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
+                    </tr>
+                </thead>
+               <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Create", "Create") |
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_ }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID_ }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID_ })
+                    </td>
+                </tr>
+                
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_ }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_ }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_ })
-        </td>
-    </tr>
-}
-
-</table>

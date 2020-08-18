@@ -20,7 +20,6 @@ namespace SaaS__05.Models
         [StringLength(50)]
         public string Title { get; set; }
 
-        [StringLength(50)]
         public string Description { get; set; }
 
         public Guid? ID____SaaS__Message__Type { get; set; }

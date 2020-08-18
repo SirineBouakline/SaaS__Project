@@ -25,7 +25,6 @@ namespace SaaS__05.Models
         [StringLength(50)]
         public string Email { get; set; }
 
-        [StringLength(50)]
         public string Addresse { get; set; }
 
         [StringLength(50)]
