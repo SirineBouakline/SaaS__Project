@@ -143,6 +143,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SaaS__AbonnementController.cs" />
+    <Compile Include="Controllers\SaaS__AbonnementEntrepriseTarifController.cs" />
     <Compile Include="Controllers\SaaS__APi__AbonnementController.cs" />
     <Compile Include="Controllers\SaaS__EntrepriseContactController.cs" />
     <Compile Include="Controllers\SaaS__EntrepriseController.cs" />
@@ -230,13 +231,9 @@
     <Content Include="Views\SaaS__Abonnement\Edit.cshtml" />
     <Content Include="Views\SaaS__Abonnement\Delete.cshtml" />
     <Content Include="Views\SaaS__Fonctionnalite\Index.cshtml" />
-    <Content Include="Views\SaaS__Fonctionnalite\Delete.cshtml" />
-    <Content Include="Views\SaaS__Fonctionnalite\Edit.cshtml" />
     <Content Include="Views\SaaS__Utilisateur\Index.cshtml" />
     <Content Include="Views\SaaS__Entreprise\Index.cshtml" />
     <Content Include="Views\SaaS__Entreprise\Create.cshtml" />
-    <Content Include="Views\SaaS__Tarif\Create.cshtml" />
-    <Content Include="Views\SaaS__Tarif\Index.cshtml" />
     <Content Include="Views\SaaS__Utilisateur\Create.cshtml" />
     <Content Include="Views\SaaS__MessageType\Index.cshtml" />
     <Content Include="Views\SaaS__MessageType\Create.cshtml" />
@@ -247,6 +244,14 @@
     <Content Include="Views\SaaS__EntrepriseContact\Create.cshtml" />
     <Content Include="Views\SaaS__Message\Index.cshtml" />
     <Content Include="Views\SaaS__Message\Create.cshtml" />
+    <Content Include="Views\SaaS__Fonctionnalite\Delete.cshtml" />
+    <Content Include="Views\SaaS__EntrepriseContact\Delete.cshtml" />
+    <Content Include="Views\SaaS__Message\Delete.cshtml" />
+    <Content Include="Views\SaaS__Fonctionnalite\Edit.cshtml" />
+    <Content Include="Views\SaaS__AbonnementEntrepriseTarif\Index.cshtml" />
+    <Content Include="Views\SaaS__AbonnementEntrepriseTarif\Create.cshtml" />
+    <Content Include="Views\SaaS__Tarif\Index.cshtml" />
+    <Content Include="Views\SaaS__Tarif\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

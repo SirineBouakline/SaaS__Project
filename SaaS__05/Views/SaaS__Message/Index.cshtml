@@ -5,60 +5,60 @@
     Layout = "~/Views/Shared/_LayoutBack.cshtml";
 }
 
-<h2>Index</h2>
+<h2>List Message</h2>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <p>
+                    @Html.ActionLink("Create", "Create")
+                </p>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.SaaS__Message__Modele.Title)</th>
+                    <th>@Html.DisplayNameFor(model => model.Title)</th>
+                    <th>@Html.DisplayNameFor(model => model.Message)</th>
+                    <th>@Html.DisplayNameFor(model => model.Destinataire)</th>
+                    <th>@Html.DisplayNameFor(model => model.Date_Envoi)</th>
+                    <th>@Html.DisplayNameFor(model => model.Heure_Envoi)</th>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SaaS__Message__Modele.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Message)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Destinataire)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date_Envoi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Heure_Envoi)
-        </th>
-        <th></th>
-    </tr>
+                    <th>Actions</th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SaaS__Message__Modele.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Message)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Destinataire)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date_Envoi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Heure_Envoi)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_ }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_ }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_ })
-        </td>
-    </tr>
-}
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SaaS__Message__Modele.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Message)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Destinataire)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date_Envoi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Heure_Envoi)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Create", "Create") |
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_ }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID_ }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID_ })
+                    </td>
+                </tr>
 
-</table>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

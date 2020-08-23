@@ -87,25 +87,27 @@ namespace SaaS__05.Controllers
         }
 
         // GET: SaaS__EntrepriseContact/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
-            return View();
+            using (DbModel DbModel = new DbModel())
+            {
+                SaaS__Entreprise__Contact abo = DbModel.SaaS__Entreprise__Contact.Find(id);
+                return View(abo);
+            }
         }
 
         // POST: SaaS__EntrepriseContact/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Guid id, FormCollection collection)
         {
-            try
+            // TODO: Add delete logic here
+            using (DbModel DbModel = new DbModel())
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                SaaS__Entreprise__Contact abo = DbModel.SaaS__Entreprise__Contact.Where(x => x.ID_ == id).FirstOrDefault();
+                DbModel.SaaS__Entreprise__Contact.Remove(abo);
+                DbModel.SaveChanges();
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
     }
 }

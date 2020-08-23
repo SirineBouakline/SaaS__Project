@@ -28,8 +28,6 @@ namespace SaaS__05.Controllers
         {
             List<SaaS__Message__Modele> listeabo = db.SaaS__Message__Modele.ToList();
             ViewData["Abos"] = listeabo;
-            List<SaaS__Message__Type> listeMt = db.SaaS__Message__Type.ToList();
-            ViewData["Mesagestypes"] = listeMt;
             return View();
         }
 
@@ -39,9 +37,6 @@ namespace SaaS__05.Controllers
         {
             List<SaaS__Message__Modele> listeabo = db.SaaS__Message__Modele.ToList();
             SaaS__Message__Modele abon = listeabo.Find(s => s.Title.Equals(messagemodele));
-            List<SaaS__Message__Type> listeMt = db.SaaS__Message__Type.ToList();
-            SaaS__Message__Type mestype = listeMt.Find(s => s.Title.Equals(messagetype));
-
             SaaS__Message abo = new SaaS__Message
             {
                 ID_ = Guid.NewGuid(),
@@ -92,25 +87,28 @@ namespace SaaS__05.Controllers
         }
 
         // GET: SaaS__Message/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
-            return View();
+            using (DbModel DbModel = new DbModel())
+            {
+                SaaS__Message abo = DbModel.SaaS__Message.Find(id);
+                return View(abo);
+            }
         }
 
-        // POST: SaaS__Message/Delete/5
+        // POST: SaaS__Abonnement/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Guid id, FormCollection collection)
         {
-            try
+            // TODO: Add delete logic here
+            using (DbModel DbModel = new DbModel())
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                SaaS__Message abo = DbModel.SaaS__Message.Where(x => x.ID_ == id).FirstOrDefault();
+                DbModel.SaaS__Message.Remove(abo);
+                DbModel.SaveChanges();
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
+
     }
 }

@@ -65,11 +65,15 @@ namespace SaaS__05.Controllers
         public ActionResult Edit(Guid id)
         {
             List<SaaS__Abonnement> listeabo = db.SaaS__Abonnement.ToList();
-            Console.WriteLine(listeabo);
+            //Console.WriteLine(listeabo);
             ViewData["Abos"] = listeabo;
-            //return View();
-            return View(db.SaaS__Fonctionnalite.Where(x => x.ID_ == id).FirstOrDefault());
-            
+            ////return View();
+            //return View(db.SaaS__Fonctionnalite.Where(x => x.ID_ == id).FirstOrDefault());
+            using (DbModel DbModel = new DbModel())
+            {
+                return View(DbModel.SaaS__Fonctionnalite.Where(x => x.ID_ == id).FirstOrDefault());
+            }
+
         }
 
         // POST: SaaS__Fonctionnalite/Edit/5
@@ -82,7 +86,6 @@ namespace SaaS__05.Controllers
                 using (DbModel DbModel = new DbModel())
                 {
                     DbModel.Entry(fonctionnalite).State = System.Data.Entity.EntityState.Modified;
-                   
                     DbModel.SaveChanges();
                 }
 

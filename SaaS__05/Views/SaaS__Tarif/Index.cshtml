@@ -4,73 +4,90 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutBack.cshtml";
 }
+<h1>List Tarif</h1>
 
-<h2>Index</h2>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+            <thead>
+                <p>
+                    @Html.ActionLink("Create", "Create")
+                </p>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ID____SaaS__Abonnement)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date_Debut)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date_Fin)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tarif_Forfaitaire_Mensuel)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tarif_Forfaitaire_Annuel)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tarif_Par_Utilisateur_Annuel)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tarif_Par_Utilisateur_Mensuel)
+                    </th>
+                    <th>Actions</th>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ID____SaaS__Abonnement)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tarif_Forfaitaire_Mensuel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tarif_Forfaitaire_Annuel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tarif_Par_Utilisateur_Annuel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tarif_Par_Utilisateur_Mensuel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date_Debut)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date_Fin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID____SaaS__Abonnement)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date_Debut)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date_Fin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tarif_Forfaitaire_Mensuel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tarif_Forfaitaire_Annuel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tarif_Par_Utilisateur_Annuel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tarif_Par_Utilisateur_Mensuel)
+                    </td>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID____SaaS__Abonnement)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tarif_Forfaitaire_Mensuel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tarif_Forfaitaire_Annuel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tarif_Par_Utilisateur_Annuel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tarif_Par_Utilisateur_Mensuel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date_Debut)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date_Fin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_ }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_ }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_ })
-        </td>
-    </tr>
-}
+                    <td>
+                        @Html.ActionLink("Create", "Create") |
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID_ }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.ID_ }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID_ })*@
+                    </td>
+                </tr>
 
-</table>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
