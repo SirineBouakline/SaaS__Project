@@ -144,6 +144,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SaaS__AbonnementController.cs" />
     <Compile Include="Controllers\SaaS__AbonnementEntrepriseTarifController.cs" />
+    <Compile Include="Controllers\SaaS__AbonnementFonctionnaliteController.cs" />
+    <Compile Include="Controllers\SaaS__AbonnementModuleController.cs" />
     <Compile Include="Controllers\SaaS__APi__AbonnementController.cs" />
     <Compile Include="Controllers\SaaS__EntrepriseContactController.cs" />
     <Compile Include="Controllers\SaaS__EntrepriseController.cs" />
@@ -159,7 +161,9 @@
     </Compile>
     <Compile Include="Models\DbModel.cs" />
     <Compile Include="Models\SaaS__Abonnement.cs" />
+    <Compile Include="Models\SaaS__Abonnement__Module.cs" />
     <Compile Include="Models\SaaS__Abonnement____88____SaaS__Entreprise____88____SaaS__Tarif.cs" />
+    <Compile Include="Models\SaaS__Abonnement____88____SaaS__Fonctionnalite.cs" />
     <Compile Include="Models\SaaS__Entreprise.cs" />
     <Compile Include="Models\SaaS__Entreprise__Contact.cs" />
     <Compile Include="Models\SaaS__Fonctionnalite.cs" />
@@ -230,7 +234,6 @@
     <Content Include="Views\SaaS__Abonnement\Create.cshtml" />
     <Content Include="Views\SaaS__Abonnement\Edit.cshtml" />
     <Content Include="Views\SaaS__Abonnement\Delete.cshtml" />
-    <Content Include="Views\SaaS__Fonctionnalite\Index.cshtml" />
     <Content Include="Views\SaaS__Utilisateur\Index.cshtml" />
     <Content Include="Views\SaaS__Entreprise\Index.cshtml" />
     <Content Include="Views\SaaS__Entreprise\Create.cshtml" />
@@ -252,6 +255,11 @@
     <Content Include="Views\SaaS__AbonnementEntrepriseTarif\Create.cshtml" />
     <Content Include="Views\SaaS__Tarif\Index.cshtml" />
     <Content Include="Views\SaaS__Tarif\Create.cshtml" />
+    <Content Include="Views\SaaS__Fonctionnalite\Index.cshtml" />
+    <Content Include="Views\SaaS__AbonnementModule\Index.cshtml" />
+    <Content Include="Views\SaaS__AbonnementModule\Create.cshtml" />
+    <Content Include="Views\SaaS__AbonnementFonctionnalite\Index.cshtml" />
+    <Content Include="Views\SaaS__AbonnementFonctionnalite\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

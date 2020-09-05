@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SaaS__05.Models.SaaS__Fonctionnalite>
+﻿@model IEnumerable<SaaS__05.Models.SaaS__Abonnement____88____SaaS__Fonctionnalite>
 
 @{
     ViewBag.Title = "Index";
@@ -13,13 +13,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SaaS__Abonnement__Module.Title)
+            @Html.DisplayNameFor(model => model.SaaS__Abonnement.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.SaaS__Fonctionnalite.Title)
         </th>
         <th></th>
     </tr>
@@ -27,13 +24,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.SaaS__Abonnement__Module.Title)
+            @Html.DisplayFor(modelItem => item.SaaS__Abonnement.Title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.SaaS__Fonctionnalite.Title)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID_ }) |

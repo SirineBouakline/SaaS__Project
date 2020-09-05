@@ -8,12 +8,14 @@ namespace SaaS__05.Models
     public partial class DbModel : DbContext
     {
         public DbModel()
-            : base("name=DbModel")
+            : base("name=DbModel1")
         {
         }
 
         public virtual DbSet<SaaS__Abonnement> SaaS__Abonnement { get; set; }
         public virtual DbSet<SaaS__Abonnement____88____SaaS__Entreprise____88____SaaS__Tarif> SaaS__Abonnement____88____SaaS__Entreprise____88____SaaS__Tarif { get; set; }
+        public virtual DbSet<SaaS__Abonnement____88____SaaS__Fonctionnalite> SaaS__Abonnement____88____SaaS__Fonctionnalite { get; set; }
+        public virtual DbSet<SaaS__Abonnement__Module> SaaS__Abonnement__Module { get; set; }
         public virtual DbSet<SaaS__Entreprise> SaaS__Entreprise { get; set; }
         public virtual DbSet<SaaS__Entreprise__Contact> SaaS__Entreprise__Contact { get; set; }
         public virtual DbSet<SaaS__Fonctionnalite> SaaS__Fonctionnalite { get; set; }
@@ -33,10 +35,14 @@ namespace SaaS__05.Models
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<SaaS__Abonnement>()
-                .HasMany(e => e.SaaS__Fonctionnalite)
+                .HasMany(e => e.SaaS__Abonnement____88____SaaS__Fonctionnalite)
                 .WithOptional(e => e.SaaS__Abonnement)
-                .HasForeignKey(e => e.ID____SaaS__Abonnement)
-                .WillCascadeOnDelete();
+                .HasForeignKey(e => e.ID____SaaS__Abonnement);
+
+            modelBuilder.Entity<SaaS__Abonnement__Module>()
+                .HasMany(e => e.SaaS__Fonctionnalite)
+                .WithOptional(e => e.SaaS__Abonnement__Module)
+                .HasForeignKey(e => e.ID____SaaS__Abonnement__Module);
 
             modelBuilder.Entity<SaaS__Entreprise>()
                 .HasMany(e => e.SaaS__Abonnement____88____SaaS__Entreprise____88____SaaS__Tarif)
@@ -54,6 +60,11 @@ namespace SaaS__05.Models
                 .HasMany(e => e.SaaS__Utilisateur)
                 .WithOptional(e => e.SaaS__Entreprise)
                 .HasForeignKey(e => e.ID____SaaS__Entreprise);
+
+            modelBuilder.Entity<SaaS__Fonctionnalite>()
+                .HasMany(e => e.SaaS__Abonnement____88____SaaS__Fonctionnalite)
+                .WithOptional(e => e.SaaS__Fonctionnalite)
+                .HasForeignKey(e => e.ID____SaaS__Fonctionnalite);
 
             modelBuilder.Entity<SaaS__Message__Modele>()
                 .HasMany(e => e.SaaS__Message)

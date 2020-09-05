@@ -45,7 +45,8 @@ namespace SaaS__05.Controllers
             {
                 ID_ = Guid.NewGuid(),
                 Description = abonnement.Description,
-                Title = abonnement.Title
+                Title = abonnement.Title,
+                
             };
             using (DbModel DbModel = new DbModel())
             {

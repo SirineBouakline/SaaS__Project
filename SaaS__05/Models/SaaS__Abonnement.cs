@@ -12,7 +12,7 @@ namespace SaaS__05.Models
         public SaaS__Abonnement()
         {
             SaaS__Abonnement____88____SaaS__Entreprise____88____SaaS__Tarif = new HashSet<SaaS__Abonnement____88____SaaS__Entreprise____88____SaaS__Tarif>();
-            SaaS__Fonctionnalite = new HashSet<SaaS__Fonctionnalite>();
+            SaaS__Abonnement____88____SaaS__Fonctionnalite = new HashSet<SaaS__Abonnement____88____SaaS__Fonctionnalite>();
         }
 
         [Key]
@@ -27,6 +27,6 @@ namespace SaaS__05.Models
         public virtual ICollection<SaaS__Abonnement____88____SaaS__Entreprise____88____SaaS__Tarif> SaaS__Abonnement____88____SaaS__Entreprise____88____SaaS__Tarif { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SaaS__Fonctionnalite> SaaS__Fonctionnalite { get; set; }
+        public virtual ICollection<SaaS__Abonnement____88____SaaS__Fonctionnalite> SaaS__Abonnement____88____SaaS__Fonctionnalite { get; set; }
     }
 }

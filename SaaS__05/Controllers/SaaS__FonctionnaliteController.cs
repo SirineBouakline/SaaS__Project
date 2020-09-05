@@ -26,23 +26,23 @@ namespace SaaS__05.Controllers
         // GET: SaaS__Fonctionnalite/Create
         public ActionResult Create()
         {
-            List<SaaS__Abonnement> listeabo = db.SaaS__Abonnement.ToList();
-            Console.WriteLine(listeabo);
-            ViewData["Abos"] = listeabo;
+            List<SaaS__Abonnement__Module> listemodules = db.SaaS__Abonnement__Module.ToList();
+            Console.WriteLine(listemodules);
+            ViewData["Abos"] = listemodules;
             return View();
         }
         // POST: SaaS__Fonctionnalite/Create
         [HttpPost]
-        public ActionResult Create(SaaS__Fonctionnalite fonctionnalite ,string abonnement)
+        public ActionResult Create(SaaS__Fonctionnalite fonctionnalite ,string module)
         {
-            List<SaaS__Abonnement> listeabo = db.SaaS__Abonnement.ToList();
-            SaaS__Abonnement abon= listeabo.Find(s=>s.Title.Equals(abonnement));
+            List<SaaS__Abonnement__Module> listemodules = db.SaaS__Abonnement__Module.ToList();
+            SaaS__Abonnement__Module mod= listemodules.Find(s=>s.Title.Equals(module));
             SaaS__Fonctionnalite fo = new SaaS__Fonctionnalite
             {
                 ID_ = Guid.NewGuid(),
                 Description = fonctionnalite.Description,
                 Title = fonctionnalite.Title,
-                ID____SaaS__Abonnement = abon.ID_
+                ID____SaaS__Abonnement__Module =mod.ID_
             };
             using (DbModel DbModel = new DbModel())
             {

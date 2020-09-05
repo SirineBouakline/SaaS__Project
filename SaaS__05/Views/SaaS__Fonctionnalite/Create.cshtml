@@ -16,17 +16,16 @@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
-        @Html.LabelFor(model => model.ID____SaaS__Abonnement, "ID____SaaS__Abonnement", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.ID____SaaS__Abonnement__Module, "ID____SaaS__Abonnement__Module", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <select name="abonnement">
-                @foreach (var std in ViewData["Abos"] as IList<SaaS__05.Models.SaaS__Abonnement>)
+            <select name="module">
+                @foreach (var std in ViewData["Abos"] as IList<SaaS__05.Models.SaaS__Abonnement__Module>)
                 {
                     <option>
                         @std.Title
                     </option>
-
-                }
-                @Html.ValidationMessageFor(model => model.ID____SaaS__Abonnement, "", new { @class = "text-danger" })
+                    }
+                @Html.ValidationMessageFor(model => model.ID____SaaS__Abonnement__Module, "", new { @class = "text-danger" })
             </select>
         </div>
         </div>
